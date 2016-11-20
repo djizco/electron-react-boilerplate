@@ -6,10 +6,12 @@
   "scripts": {
     "build": "webpack -p --config webpack.prod.config.js",
     "dev": "webpack --watch --config webpack.dev.config.js",
+    "lint": "./scripts/lint",
+    "lint-fix": "./scripts/lint-fix",
     "prepack": "npm run build",
     "pack": "node build.js",
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./scripts/test"
   },
   "repository": {
     "type": "git",
