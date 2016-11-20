@@ -1,0 +1,13 @@
+$turquoise: #049DBF;
+$blue:      #2486F2;
+$green:     #16D99E;
+$orange:    #F29523;
+$red:       #F2594B;
+
+$primary:  $turquoise;
+$info:     $blue;
+$success:  $green;
+$warning:  $orange;
+$danger:   $red;
+
+@import "~bulma";
