@@ -57,6 +57,7 @@
     "lab-babel": "^1.1.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "material-ui": "^0.16.4",
     "node-sass": "^3.8.0",
     "ramda": "^0.22.1",
     "react": "^15.3.2",

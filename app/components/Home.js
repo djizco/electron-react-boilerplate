@@ -1,4 +1,12 @@
 import React, { PropTypes } from 'react';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const styles = {
+  button: {
+    margin: '10px',
+  },
+};
 
 export function Button(props) {
   return (
@@ -25,6 +33,8 @@ export default function Home(props) {
       </span>
       <Button onContinue={props.toCounter}>Continue to Counter App</Button>
       <Button onContinue={props.toTodo}>Continue to Todo App</Button>
+      <RaisedButton label="Raised Button" style={styles.button} />
+      <FlatButton label="Flat Button" style={styles.button} />
     </div>
   );
 }
