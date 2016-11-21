@@ -39,3 +39,5 @@ Enzyme        - React View Testing
 ## Todo
 
 Fix images / background image
+
+Add tests for reducers and components
