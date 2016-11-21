@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/zacoustic/qa.git"
+    "url": "git+https://github.com/djizco/boilerplate-electron-react.git"
   },
-  "author": "Anthony Shull <anthony.shull@balancecxi.com>",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/zacoustic/qa#readme",
+  "author": "Rico Rojas <djizco@yahoo.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/djizco/boilerplate-electron-react#readme",
   "dependencies": {
     "electron-positioner": "^3.0.0"
   },
