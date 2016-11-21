@@ -50,4 +50,4 @@ npm run lint-fix
 
 Figure out importing images for backgrounds.
 
-Add tests for reducers and components
+Add tests for reducers and components.
