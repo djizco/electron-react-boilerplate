@@ -4,7 +4,7 @@ export function Button(props) {
   return (
     <button
       type="button"
-      className="button is-medium is-dark is-outlined margin-sm"
+      className="button is-medium is-dark is-outlined"
       onClick={props.onContinue} >
       {props.children}
     </button>
@@ -18,7 +18,7 @@ Button.propTypes = {
 
 export default function Home(props) {
   return (
-    <div className="home-container">
+    <div className="home-container app-flex">
       <h1 className="home-header">Electron React App</h1>
       <Button onContinue={props.toCounter}>Continue to Counter App</Button>
       <Button onContinue={props.toTodo}>Continue to Todo App</Button>
