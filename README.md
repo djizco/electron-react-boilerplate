@@ -14,6 +14,14 @@ npm start
 npm run pack
 ```
 
+## Other Commands
+
+``
+npm run test
+npm run lint
+npm run lint-fix
+```
+
 ## Technologies
 
 Electron      - Desktop GUI Application
