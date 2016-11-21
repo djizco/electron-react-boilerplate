@@ -24,5 +24,5 @@ app.on('ready', () => {
   const positioner = new Positioner(mainWindow);
   positioner.move('center');
   mainWindow.loadURL(path.join('file://', __dirname, 'build', 'index.html'));
-  // mainWindow.webContents.openDevTools(); // uncomment for develoment
+  if (process.env.NODE_ENV === 'development') mainWindow.webContents.openDevTools();
 });

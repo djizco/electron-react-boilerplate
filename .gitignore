@@ -4,6 +4,7 @@ node_modules
 # App packaged
 dist/
 build/
+*.tgz
 
 # OSX
 .DS_Store

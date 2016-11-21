@@ -10,7 +10,7 @@
     "lint-fix": "./scripts/lint-fix",
     "prepack": "npm run build",
     "pack": "node build.js",
-    "start": "electron .",
+    "start": "NODE_ENV=development electron .",
     "test": "./scripts/test"
   },
   "repository": {
