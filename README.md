@@ -24,28 +24,30 @@ npm run lint-fix
 
 ## Technologies
 
-Electron      - Desktop GUI Application
+[Electron](http://electron.atom.io/) - Desktop GUI Application
 
-React         - View Library
+[React](https://facebook.github.io/react/) - View Library
 
-Redux         - State Manager
+[Redux](http://redux.js.org/) - State Manager
 
-Webpack       - Code Packager for React
+[Webpack](https://webpack.github.io/) - Code Packager for React
 
-Bulma         - CSS Framework
+[Bulma](http://bulma.io/) - CSS Framework
 
-FontAwesome   - Icons
+[Material-UI](http://material-ui.com/) - React Element Library
 
-Ramda         - Functional Library
+[FontAwesome](http://fontawesome.io/) - Icons
 
-ESLint        - Code Linter
+[Ramda](http://ramdajs.com/) - Functional Library
 
-Code / Lab    - Testing Framework
+[ESLint](http://eslint.org/) - Code Linter
 
-Enzyme        - React View Testing
+[Code](https://github.com/hapijs/code) / [Lab](https://github.com/hapijs/lab) - JS Testing Framework
+
+[Enzyme](https://github.com/airbnb/enzyme) - React View Testing
 
 ## Todo
 
-Fix images / background image
+Figure out importing images for backgrounds.
 
 Add tests for reducers and components
