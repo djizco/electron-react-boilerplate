@@ -24,7 +24,7 @@ Redux         - State Manager
 
 Webpack       - Code Packager for React
 
-Bulma.io      - CSS Framework
+Bulma         - CSS Framework
 
 FontAwesome   - Icons
 
