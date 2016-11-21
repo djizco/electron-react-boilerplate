@@ -20,19 +20,19 @@ Button.propTypes = {
 export default function Counter(props) {
   return (
     <div className="counter-app app-container">
-      <div className="col-sm-12">
-        <h1 className="app-header">Counter:</h1>
-        <div className="counter">{props.counter}</div>
-        <div className="col-sm-offset-3 col-sm-3 text-center">
+      <h1 className="app-header">Counter:</h1>
+      <div className="counter">{props.counter}</div>
+      <div className="columns">
+        <div className="column is-6 text-center">
           <Button
-            className="btn btn-lg btn-success btn-border margin-sm"
+            className="button is-success margin-sm"
             handleClick={props.onIncrement} >
             Increment
           </Button>
         </div>
-        <div className="col-sm-3 text-center">
+        <div className="column is-6 text-center">
           <Button
-            className="btn btn-lg btn-danger btn-border margin-sm"
+            className="button is-danger margin-sm"
             handleClick={props.onDecrement} >
             Decrement
           </Button>

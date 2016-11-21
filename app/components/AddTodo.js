@@ -12,13 +12,17 @@ export default class AddTodo extends Component {
 
   render() {
     return (
-      <div className="add-todo col-sm-12">
-        <input className="col-sm-10" type="text" ref={c => { this.input = c; }} />
-        <button
-          className="btn btn-sm btn-border btn-success col-sm-1 col-sm-offset-1"
-          onClick={this.handleClick} >
-          Add
-        </button>
+      <div className="add-todo columns">
+        <div className="column is-10">
+          <input className="input" type="text" ref={c => { this.input = c; }} />
+        </div>
+        <div className="column is-2">
+          <button
+            className="button is-success"
+            onClick={this.handleClick} >
+            Add
+          </button>
+        </div>
       </div>
     );
   }

@@ -4,7 +4,7 @@ export function Button(props) {
   return (
     <button
       type="button"
-      className="btn btn-lg btn-border margin-sm"
+      className="button is-medium is-dark is-outlined margin-sm"
       onClick={props.onContinue} >
       {props.children}
     </button>

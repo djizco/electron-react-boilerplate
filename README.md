@@ -38,6 +38,4 @@ Enzyme        - React View Testing
 
 ## Todo
 
-Update CSS from bootstrap to bulma.io
-
 Fix images / background image

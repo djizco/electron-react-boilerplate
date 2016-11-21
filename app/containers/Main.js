@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import TransitionGroup from 'react-addons-css-transition-group';
-import Navigation from './Navigation';
+import Navigation from '../components/Navigation';
 
 export default function Main(props) {
   return (
