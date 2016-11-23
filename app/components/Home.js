@@ -28,9 +28,6 @@ export default function Home(props) {
   return (
     <div className="home-container app-flex">
       <h1 className="home-header">Electron React App</h1>
-      <span className="icon is-large">
-        <i className="fa fa-home" />
-      </span>
       <Button onContinue={props.toCounter}>Continue to Counter App</Button>
       <Button onContinue={props.toTodo}>Continue to Todo App</Button>
       <RaisedButton label="Raised Button" style={styles.button} />
