@@ -1,11 +1,14 @@
 const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: path.join(__dirname, 'app/index.html'),
   filename: 'index.html',
   inject: 'body',
 });
+
+const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 
 module.exports = {
   entry: [
@@ -24,11 +27,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader'],
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
-        test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.scss$/i,
+        loader: ExtractTextPlugin.extract(['css', 'sass'])
+      },
+      {
+        test: /\.less$/i,
+        loader: ExtractTextPlugin.extract(['css', 'less'])
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
@@ -49,5 +56,6 @@ module.exports = {
   },
   plugins: [
     HtmlWebpackPluginConfig,
+    ExtractTextPluginConfig,
   ]
 };
