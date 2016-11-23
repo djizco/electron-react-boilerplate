@@ -17,8 +17,26 @@
     "type": "git",
     "url": "git+https://github.com/djizco/boilerplate-electron-react.git"
   },
-  "author": "Rico Rojas <djizco@yahoo.com>",
+  "author": {
+    "name": "Rico Rojas",
+    "email": "djizco@yahoo.com",
+    "url": "https://github.com/djizco"
+  },
   "license": "UNLICENSED",
+  "keywords": [
+    "electron",
+    "react",
+    "redux",
+    "webpack",
+    "bulma",
+    "material-ui",
+    "fontawesome",
+    "ramda",
+    "eslint",
+    "code",
+    "lab",
+    "enzyme"
+  ],
   "homepage": "https://github.com/djizco/boilerplate-electron-react#readme",
   "dependencies": {
     "electron-positioner": "^3.0.0"
