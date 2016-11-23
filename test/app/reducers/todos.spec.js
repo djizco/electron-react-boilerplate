@@ -15,6 +15,8 @@ experiment('Todos Reducer:', () => {
 
     expect(state).to.be.an.array();
     expect(state).to.have.length(1);
+
+    expect(todo).to.be.an.object();
     expect(todo.id).to.equal(1);
     expect(todo.text).to.equal('Example Todo');
     done();
