@@ -46,9 +46,3 @@ npm run lint-fix
 [Code](https://github.com/hapijs/code) / [Lab](https://github.com/hapijs/lab) - JS Testing Framework
 
 [Enzyme](https://github.com/airbnb/enzyme) - React View Testing
-
-## Todo
-
-Figure out importing images for backgrounds.
-
-Add tests for components.

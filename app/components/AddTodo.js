@@ -22,7 +22,7 @@ export default class AddTodo extends Component {
 
   render() {
     return (
-      <div className="add-todo columns">
+      <div className="add-todo columns is-gapless">
         <div className="column is-10">
           <input className="input" type="text" ref={c => { this.input = c; }} />
         </div>
