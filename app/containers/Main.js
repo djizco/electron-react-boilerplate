@@ -6,7 +6,7 @@ import Navigation from '../components/Navigation';
 export default function Main(props) {
   return (
     <MuiThemeProvider>
-      <div className="main-container">
+      <div>
         <Navigation />
         <TransitionGroup
           transitionName="appear"

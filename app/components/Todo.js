@@ -5,7 +5,7 @@ import TodoList from './TodoList';
 export default function Todo(props) {
   return (
     <div className="todo-app">
-      <h1 className="app-header">Todo List:</h1>
+      <h1 className="title is-1 has-text-centered">Todo List:</h1>
       <div className="columns">
         <div className="column is-8 is-offset-2 text-center">
           <AddTodo onAddClick={props.handleAddClick} />

@@ -19,8 +19,8 @@ Button.propTypes = {
 
 export default function Counter(props) {
   return (
-    <div className="app-flex counter-app">
-      <h1 className="app-header">Counter:</h1>
+    <div className="counter-app app-flex">
+      <h1 className="title is-1 has-text-centered">Counter:</h1>
       <div className="counter">{props.counter}</div>
       <div className="columns">
         <div className="column is-6 text-center">
