@@ -1,21 +1,5 @@
 import React, { PropTypes } from 'react';
-
-export function Button(props) {
-  return (
-    <button
-      type="button"
-      className={props.className}
-      onClick={props.handleClick} >
-      {props.children}
-    </button>
-  );
-}
-
-Button.propTypes = {
-  className: PropTypes.string,
-  handleClick: PropTypes.func.isRequired,
-  children: PropTypes.string.isRequired,
-};
+import Button from './Button';
 
 export default function Counter(props) {
   return (
@@ -25,17 +9,15 @@ export default function Counter(props) {
       <div className="columns">
         <div className="column is-6 text-center">
           <Button
-            className="button is-success"
-            handleClick={props.onIncrement} >
-            Increment
-          </Button>
+            success={true}
+            handleClick={props.onIncrement}
+            label="Increment" />
         </div>
         <div className="column is-6 text-center">
           <Button
-            className="button is-danger"
-            handleClick={props.onDecrement} >
-            Decrement
-          </Button>
+            danger={true}
+            handleClick={props.onDecrement}
+            label="Decrement" />
         </div>
       </div>
     </div>

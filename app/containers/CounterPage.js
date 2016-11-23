@@ -4,7 +4,6 @@ import R from 'ramda';
 import Counter from '../components/Counter';
 import { increment, decrement } from '../actions/counter';
 
-
 export class CounterPage extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
