@@ -22,7 +22,7 @@
     "email": "djizco@yahoo.com",
     "url": "https://github.com/djizco"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": [
     "electron",
     "react",
