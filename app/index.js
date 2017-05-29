@@ -6,9 +6,10 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import 'font-awesome-webpack';
-import './styles/main.scss';
+import './styles/index.scss';
+import './assets';
 
-import Root from './containers/Root';
+import Root from './components/Root';
 import configureStore from './store/configureStore';
 
 injectTapEventPlugin();
@@ -18,5 +19,5 @@ const history = syncHistoryWithStore(hashHistory, store);
 
 render(
   <Root store={store} history={history} />,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

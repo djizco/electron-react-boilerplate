@@ -27,22 +27,44 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css'),
+        loader: ExtractTextPlugin.extract(['style-loader', 'css-loader']),
       },
       {
         test: /\.scss$/i,
-        loader: ExtractTextPlugin.extract(['css', 'sass']),
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
       {
         test: /\.less$/i,
-        loader: ExtractTextPlugin.extract(['css', 'less']),
+        loader: ExtractTextPlugin.extract(['css-loader', 'less-loader']),
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
-        loaders: [
-          'file?name=[name].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
-        ]
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              optipng: {
+                optimizationLevel: 7,
+              },
+              mozjpeg: {
+                progressive: true,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              pngquant: {
+                quality: '75-90',
+                speed: 3,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

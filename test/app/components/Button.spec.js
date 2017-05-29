@@ -3,10 +3,12 @@ import Lab from 'lab';
 import { expect } from 'code';
 import { shallow } from 'enzyme';
 
-import Button from '../../../app/components/Button';
+import Button from '../../../client/components/Button';
 
-const lab = exports.lab = Lab.script();
+const lab = Lab.script();
 const { experiment, test } = lab;
+
+exports.lab = lab;
 
 const wrapper = shallow(<Button />);
 

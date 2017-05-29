@@ -1,18 +1,18 @@
 module.exports = {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
   },
   "extends": "airbnb",
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
-    "allowImportExportEverywhere": false
+    "allowImportExportEverywhere": false,
   },
   "plugins": ["react"],
   "rules": {
-    // enable additional rules
-    "import/extensions": 2,
+    // enable rules
+    "react/jsx-key": 2,
 
     // override default options for rules from base configurations
     "eqeqeq": [2, "smart"],
@@ -24,14 +24,21 @@ module.exports = {
       "Property": true,
       "VariableDeclarator": true
     }}],
-    "object-curly-spacing": [2, "always", {"objectsInObjects": false, "arraysInObjects": false}],
+
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
     "react/jsx-closing-bracket-location": [2, { selfClosing: 'after-props', nonEmpty: 'after-props' }],
 
-    // disable rules from base configurations
+    // disable rules
+    "arrow-parens": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-named-as-default": 0, // causes error with redux testing
-    "react/require-extension": 0, // depracated
-    "react/jsx-boolean-value": 0
-  }
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-confusing-arrow": 0,
+    "no-nested-ternary": 0,
+    "no-plusplus": 0,
+    "no-shadow": 0,
+    "no-underscore-dangle": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-boolean-value": 0,
+  },
 };

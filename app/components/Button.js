@@ -1,13 +1,24 @@
-import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Button(props) {
-  const { success, danger, handleClick, label } = props;
-  const classes = classNames({ button: true, 'is-success': success, 'is-danger': danger });
+  const { handleClick, label, type, style } = props;
+
+  const typeMap = {
+    info: 'is-info',
+    primary: 'is-primary',
+    success: 'is-success',
+    warning: 'is-warning',
+    danger: 'is-danger',
+  };
+
+  const isType = typeMap[type];
+
   return (
     <button
+      style={style}
       type="button"
-      className={classes}
+      className={`button ${isType}`}
       onClick={handleClick} >
       {label}
     </button>
@@ -15,13 +26,15 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  success: PropTypes.bool,
-  danger: PropTypes.bool,
+  style: PropTypes.object,
+  type: PropTypes.string,
   handleClick: PropTypes.func,
   label: PropTypes.string,
 };
 
 Button.defaultProps = {
+  style: {},
   label: '',
-  onClick: () => {},
+  type: 'info',
+  handleClick: () => {},
 };
