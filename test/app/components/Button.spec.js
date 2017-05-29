@@ -3,7 +3,7 @@ import Lab from 'lab';
 import { expect } from 'code';
 import { shallow } from 'enzyme';
 
-import Button from '../../../client/components/Button';
+import Button from '../../../app/components/Button';
 
 const lab = Lab.script();
 const { experiment, test } = lab;
