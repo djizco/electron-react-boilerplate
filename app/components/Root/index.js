@@ -1,6 +1,3 @@
-import prod from './Root.prod';
-import dev from './Root.dev';
+import Root from './Root';
 
-const isProd = process.env.NODE_ENV === 'production';
-
-export default isProd ? prod : dev;
+export default Root;

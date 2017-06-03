@@ -1,6 +1,8 @@
 # Electron-React Boilerplate
 
-## Quick Start for Development
+## Quick Start
+
+#### for Development
 
 ```
 npm install
@@ -9,18 +11,19 @@ npm run dev
 npm start
 ```
 
-## Quick Start for Production
+#### for Production
 
 ```
 npm run pack
 ```
 
-## Other Commands
+#### Other Commands
 
 ```
 npm test
+npm run test:verbose
 npm run lint
-npm run lint-fix
+npm run lint:fix
 ```
 
 ## Technologies

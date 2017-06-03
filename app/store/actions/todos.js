@@ -1,16 +1,21 @@
+import { batchActions } from 'redux-batched-actions';
+
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_COMPLETE_TODO = 'TOGGLE_COMPLETE_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
 export const HIDE_TODO = 'HIDE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
+export const INCREMENT_TODO_ID = 'INCREMENT_TODO_ID';
 
-let nextToDoId = 1;
+export const incrementTodoId = () => ({
+  type: INCREMENT_TODO_ID,
+});
 
-export function addTodo(text) {
+export function addTodo(id, text) {
   return {
     type: ADD_TODO,
-    id: nextToDoId++,
     createdAt: Date.now(),
+    id,
     text,
   };
 }
@@ -44,3 +49,11 @@ export function deleteTodo(id) {
     id,
   };
 }
+
+export const addTodoAndIncrementId = text => (dispatch, getState) => {
+  const { nextTodoId } = getState();
+  dispatch(batchActions([
+    addTodo(nextTodoId, text),
+    incrementTodoId(),
+  ], 'ADD_TODO_AND_INCREMENT_ID'));
+};
