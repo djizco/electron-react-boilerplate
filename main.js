@@ -2,9 +2,9 @@ const electron = require('electron');
 const path     = require('path');
 const Positioner = require('electron-positioner');
 
-const BrowserWindow = electron.BrowserWindow;
+const { BrowserWindow } = electron;
 
-const app = electron.app;
+const { app } = electron;
 
 let mainWindow = null;
 

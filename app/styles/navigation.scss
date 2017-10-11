@@ -1,11 +1,13 @@
-.nav {
-  background-color: $whitesmoke;
-
+.navbar {
   &.is-fixed {
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1030;
+  }
+
+  .title {
+    font-weight: 300;
   }
 }

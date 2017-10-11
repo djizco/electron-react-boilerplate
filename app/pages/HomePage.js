@@ -11,7 +11,7 @@ export default function HomePage() {
     <div className="home-page">
       <div className="container">
         <div className="section link-section app-flex">
-          <h1 className="title is-1">React App</h1>
+          <h1 className="title is-1">Electron React App</h1>
           <RaisedButton label="Counter App" style={buttonStyles} onClick={handleToCounter} />
           <RaisedButton label="Todo App" style={buttonStyles} onClick={handleToTodo} />
         </div>
