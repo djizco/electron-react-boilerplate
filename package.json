@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-electron-react",
-  "version": "1.0.0",
-  "description": "A boilerplate for Electron using React",
+  "name": "electron-react-boilerplate",
+  "version": "0.1.0",
+  "description": "A boilerplate for Electron with React",
   "main": "main.js",
   "scripts": {
     "build": "webpack -p --config webpack.prod.config.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/djizco/boilerplate-electron-react.git"
+    "url": "git+https://github.com/djizco/electron-react-boilerplate.git"
   },
   "author": {
     "name": "Rico Rojas",
@@ -38,7 +38,7 @@
     "lab",
     "enzyme"
   ],
-  "homepage": "https://github.com/djizco/boilerplate-electron-react#readme",
+  "homepage": "https://github.com/djizco/electron-react-boilerplate#readme",
   "engines": {
     "node": ">=8.9.0"
   },

@@ -1,4 +1,4 @@
-# Electron-React Boilerplate
+# Electron React Boilerplate
 
 ## Quick Start
 
