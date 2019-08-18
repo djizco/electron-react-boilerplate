@@ -1,10 +1,8 @@
-const electron = require('electron');
-const path     = require('path');
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
 const Positioner = require('electron-positioner');
 
-const { BrowserWindow } = electron;
-
-const { app } = electron;
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
 
 let mainWindow = null;
 
@@ -16,13 +14,12 @@ app.on('ready', () => {
     resizable: true,
     titleBarStyle: 'default',
     webPreferences: {
-      nodeIntegration: false,
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(app.getAppPath(), 'preload.js'),
     },
   });
 
   const positioner = new Positioner(mainWindow);
+
   positioner.move('center');
-  mainWindow.loadURL(path.join('file://', __dirname, 'build', 'index.html'));
-  if (process.env.NODE_ENV === 'development') mainWindow.webContents.openDevTools();
+  mainWindow.loadFile(path.join(app.getAppPath(), 'build/index.html'));
 });

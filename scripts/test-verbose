@@ -1,1 +1,1 @@
-lab -T node_modules/lab-babel -S -I __core-js_shared__ -c -v
+jest app --config=./config/jest.config.js --verbose

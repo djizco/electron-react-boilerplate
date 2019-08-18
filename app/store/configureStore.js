@@ -1,20 +1,20 @@
 import { createStore, applyMiddleware } from 'redux';
-import { enableBatching } from 'redux-batched-actions';
-import createLogger from 'redux-logger';
+import { routerMiddleware } from 'connected-react-router';
+import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import createRootReducer from './reducers';
 
-const middlewares = [thunk];
+export default function configureStore(history, initialState = {}) {
+  const middlewares = [routerMiddleware(history), thunk];
 
-if (process.env.NODE_ENV !== 'production') {
-  const logger = createLogger({ collapsed: true, diff: true });
-  middlewares.push(logger);
-}
+  if (process.env.NODE_ENV === 'development') {
+    const logger = createLogger({ collapsed: true, diff: true });
+    middlewares.push(logger);
+  }
 
-export default function configureStore(preloadedState) {
   return createStore(
-    enableBatching(rootReducer),
-    preloadedState,
+    createRootReducer(history),
+    initialState,
     applyMiddleware(...middlewares),
   );
 }

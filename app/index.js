@@ -1,23 +1,17 @@
 import React from 'react';
-
 import { render } from 'react-dom';
-import { hashHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import { createHashHistory } from 'history';
 
-import 'font-awesome-webpack';
-import './styles/index.scss';
-import './assets';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
-import Root from './components/Root';
-import configureStore from './store/configureStore';
+import Root from '_environment/Root';
+import configureStore from '_store/configureStore';
 
-injectTapEventPlugin();
-
-const store = configureStore();
-const history = syncHistoryWithStore(hashHistory, store);
+const history = createHashHistory();
+const store = configureStore(history);
 
 render(
-  <Root store={store} history={history} />,
+  <Root history={history} store={store} />,
   document.getElementById('app'),
 );

@@ -14,6 +14,7 @@ npm start
 #### for Production
 
 ```
+npm run build
 npm run pack
 ```
 
@@ -44,8 +45,10 @@ npm run lint:fix
 
 [Ramda](http://ramdajs.com/) - Functional Library
 
+[date-fns](https://date-fns.org/) - Date Functions Library
+
 [ESLint](http://eslint.org/) - Code Linter
 
-[Code](https://github.com/hapijs/code) / [Lab](https://github.com/hapijs/lab) - JS Testing Framework
+[Jest](https://jestjs.io/) - Testing Framework
 
 [Enzyme](https://github.com/airbnb/enzyme) - React View Testing
