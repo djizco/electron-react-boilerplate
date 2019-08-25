@@ -15,7 +15,7 @@ const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
   filename: '[name].css',
 });
 
-const CleanWebpackPluginConfig =  new CleanWebpackPlugin({
+const CleanWebpackPluginConfig = new CleanWebpackPlugin({
   verbose: true,
 });
 
