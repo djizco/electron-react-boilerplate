@@ -4,23 +4,24 @@
 
 #### for Development
 
-```
+```bash
 npm install
 npm run dev
 
+# new window
 npm start
 ```
 
 #### for Production
 
-```
+```bash
 npm run build
 npm run pack
 ```
 
 #### Other Commands
 
-```
+```bash
 npm test
 npm run test:verbose
 npm run lint
