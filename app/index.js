@@ -1,15 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createHashHistory } from 'history';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import Root from '_environment/Root';
-import configureStore from '_store/configureStore';
+import history from '_app/history';
+import store from '_app/store';
 
-const history = createHashHistory();
-const store = configureStore(history);
+import Root from '_environment/Root';
 
 render(
   <Root history={history} store={store} />,
