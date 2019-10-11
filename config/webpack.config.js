@@ -21,7 +21,7 @@ const CleanWebpackPluginConfig = new CleanWebpackPlugin({
 
 module.exports = {
   entry: [
-    './app/styles/index.scss',
+    './app/styles/scss/index.scss',
     './app/assets/index.js',
     './app/index.js',
   ],
