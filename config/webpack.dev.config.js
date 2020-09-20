@@ -7,8 +7,4 @@ config.plugins.push(new webpack.DefinePlugin({
   },
 }));
 
-config.plugins.push(new webpack.LoaderOptionsPlugin({
-  debug: true,
-}));
-
 module.exports = config;
