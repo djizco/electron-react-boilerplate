@@ -1,7 +1,6 @@
 const electronPackager = require('electron-packager');
 
 const options = {
-  arch: 'all',
   asar: true,
   dir: '.',
   ignore: 'app/*',
