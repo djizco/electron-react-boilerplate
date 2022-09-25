@@ -1,9 +1,18 @@
+const webpack = require('webpack');
 const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const resolve = dir => path.join(__dirname, '../', dir);
+
+const env = process.env.NODE_ENV || 'development';
+const isDev = env === 'development';
+
+const WebpackDefinePluginConfig = new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify(env),
+  },
+});
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: resolve('app/index.html'),
@@ -11,23 +20,17 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body',
 });
 
-const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
-  filename: '[name].css',
-});
-
-const CleanWebpackPluginConfig = new CleanWebpackPlugin({
-  verbose: true,
-});
-
 module.exports = {
+  devtool: 'source-map',
   entry: [
-    './app/styles/scss/index.scss',
-    './app/assets/index.js',
-    './app/index.js',
+    resolve('app/styles/scss/index.scss'),
+    resolve('app/assets/index.js'),
+    resolve('app/index.js'),
   ],
   output: {
-    filename: '[name].js',
+    filename: isDev ? '[name].js' : '[name].[fullhash].js',
     path: resolve('build'),
+    clean: true,
   },
   resolve: {
     alias: {
@@ -40,7 +43,6 @@ module.exports = {
       _atoms: resolve('app/components/atoms/'),
       _molecules: resolve('app/components/molecules/'),
       _organisms: resolve('app/components/organisms/'),
-      _templates: resolve('app/components/templates/'),
       _pages: resolve('app/components/pages/'),
       _environment: resolve('app/components/environment/'),
       _store: resolve('app/store/'),
@@ -58,59 +60,42 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.scss$/i,
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.less$/i,
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
       },
       {
-        test: /\.(jpe?g|png|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: { name: 'images/[name].[ext]' },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              optipng: { optimizationLevel: 7 },
-              pngquant: { quality: [0.75, 0.90], speed: 3 },
-              mozjpeg: { progressive: true },
-              gifsicle: { interlaced: false },
-            },
-          },
-        ],
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader',
-        options: {
-          name: 'fonts/[name].[ext]',
-          limit: 8192,
-          mimetype: 'application/font-woff',
+        test: /\.(jpe?g|png|gif)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
         },
       },
       {
-        test: /\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader',
-        options: { name: 'icons/[name].[ext]' },
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'icons/[name][ext]',
+        },
       },
       {
-        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader',
-        options: { name: 'fonts/[name].[ext]' },
+        test: /\.(woff(2)|ttf|eot|otf)?(\?v=\d+\.\d+\.\d+)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
     ],
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    MiniCssExtractPluginConfig,
-    CleanWebpackPluginConfig,
+    WebpackDefinePluginConfig,
   ],
   performance: {
     hints: false,

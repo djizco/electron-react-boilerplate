@@ -107,5 +107,3 @@ This is based on atomic design. Learn more about [atomic design](http://bradfros
 [ESLint](http://eslint.org/) - Code Linter
 
 [Jest](https://jestjs.io/) - Testing Framework
-
-[Enzyme](https://github.com/airbnb/enzyme) - React View Testing
