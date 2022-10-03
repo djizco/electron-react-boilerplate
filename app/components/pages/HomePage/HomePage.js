@@ -13,7 +13,7 @@ export default function HomePage({ classes }) {
   const dispatch = useDispatch();
 
   const pushToCounter = () => dispatch(push('/counter'));
-  const pushToTodo = () => dispatch(push('/counter'));
+  const pushToTodo = () => dispatch(push('/todo'));
 
   return (
     <div className="home-page">
